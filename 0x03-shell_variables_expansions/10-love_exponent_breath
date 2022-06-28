@@ -1,2 +1,2 @@
 #!/bin/bash
-export echo $((BREATH**LOVE))
+export echo $((BREATH^LOVE))
