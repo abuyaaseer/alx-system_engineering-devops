@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#displays time for 12hours and 59min
+#displays hours from 0 t0 12
+#displays minutes from 1 to 59
+
+hour=0
+while [ $hour -lt 13 ]
+do
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -lt 60 ]
+  do
+    echo "$minute"
+    (( minute++ ))
+  done
+  (( hour++ ))
+done
