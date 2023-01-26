@@ -6,7 +6,7 @@ while [ $number -lt 10 ]
 do
   if [ "$number" -eq 9 ]
   then
-      echo "Hi"
+    echo "Hi"
   fi
   echo "Best school"
   (( number++ ))
