@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#using while loop to loop through a statement multiple times
+
+number = 0
+while [ $number -lt 10 ]
+do
+	echo "Best School"
+	((number++))
+done
