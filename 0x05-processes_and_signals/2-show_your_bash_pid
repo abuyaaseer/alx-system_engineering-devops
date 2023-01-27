@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#displays  lines containing the bash word list of currently running processes
+
+ps -aux | grep bash
