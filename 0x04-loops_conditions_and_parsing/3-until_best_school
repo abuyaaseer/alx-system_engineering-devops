@@ -2,7 +2,7 @@
 #using until to loop through a statement 10x
 
 number=0
-until [ $number -ge 10 ]
+until [ $number -eq 10 ]
 do
   echo "Best school"
   (( number++ ))

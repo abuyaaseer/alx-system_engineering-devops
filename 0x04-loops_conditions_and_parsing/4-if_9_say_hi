@@ -4,7 +4,7 @@
 number=0
 while [ $number -lt 10 ]
 do
-  if [ "$number" -eq 9 ]
+  if [ $number -eq 9 ]
   then
     echo "Hi"
   fi
