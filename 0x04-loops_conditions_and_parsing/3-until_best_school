@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-#using until to loop through a statement 10x
+# Displays 'Best School' in stdout 10 times using the until loop
 
-number=0
-until [ $number -eq 10 ]
+index=0
+
+until [ $index -eq 10 ]
 do
-  echo "Best school"
-  (( number++ ))
+  echo "Best School"
+  ((index++))
 done
