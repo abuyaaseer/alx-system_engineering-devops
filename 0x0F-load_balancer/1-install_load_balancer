@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 #Bash script that configures nginx so that the http response contain a new header
 
+balancer="\
+frontend haproxy_balancer
+    bind *:80
+    mode http
+    default_backend webservers
+    
+backend webservers
+    balance roundrobin
+    server 26071-web-01 44.210.150.159:80 check
+    server 26071-web-02 35.173.47.15:80 check
+"
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install software-properties-common
