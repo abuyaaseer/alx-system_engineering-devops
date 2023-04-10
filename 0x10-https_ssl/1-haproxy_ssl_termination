@@ -34,20 +34,20 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 # start of parameters for aysuarex.tech
-frontend aysuarex.tech-http-frontend
+frontend abdulkareembello.tech-http-frontend
 	bind	 *:80
 	http-request set-header X-Forwarded-Proto http
-	default_backend	 aysuarex.tech-backend
+	default_backend	 abdulkareembello.tech-backend
 
 
-frontend  aysuarex.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/aysuarex.tech.pem
+frontend  abdulkareembello.tech-https-frontend
+	bind *:443 ssl crt /etc/ssl/abdulkareembello.tech.pem
 	http-request set-header X-Forwarded-Proto https
-        default_backend aysuarex.tech-backend
+        default_backend abdulkareembello.tech-backend
 
 
-backend aysuarex.tech-backend
+backend abdulkareembello.tech-backend
         balance roundrobin
-        server 914-web-01 44.210.150.159:80 check
-        server 914-web-02 35.173.47.15:80 check
+        server 69557-web-01 100.24.235.55:80 check
+        server 69557-web-02 18.209.180.15:80 check
 # end of parameters
