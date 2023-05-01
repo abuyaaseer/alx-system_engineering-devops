@@ -2,17 +2,27 @@
 """Exports data inCSV format."""
 import csv
 import requests
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/"
-    u = requests.get(url + "users/{}".format(id)).json()
-    username = u.get("username")
-    todos = requests.get(url + "todos", params={"userId": id}).json()
+    url = "https://jsonplaceholder.typicode.com"
+    Id = argv[1]
 
-    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        [writer.writerow(
-            [id, username, t.get("completed"), t.get("title")]
-         ) for t in todos]
+    employees = requests.get("{}/users/{}".format(url, Id)).json()
+    todos = requests.get(url + "/todos", params={"userId": Id}).json()
+
+    userName = employees.get('username')
+    fileName = Id + ".csv"
+
+    line = []
+    for info in todos:
+        line.append([Id, userName, info.get('completed'),
+                    info.get('title')])
+
+    with open(fileName, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, delimiter=',',
+                            quotechar='"', quoting=csv.QUOTE_ALL)
+
+        for r in line:
+            writer.writerow(r)
+
