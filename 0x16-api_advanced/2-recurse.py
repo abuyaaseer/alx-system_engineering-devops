@@ -15,12 +15,12 @@ def recurse(subreddit, hot_list=[], after="", count=0):
         "count": count,
         "limit": 100
     }
-    resp = requests.get(url, headers=headers, params=params,
+    response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
-    if resp.status_code == 404:
+    if response.status_code == 404:
         return None
 
-    results = resp.json().get("data")
+    results = response.json().get("data")
     after = results.get("after")
     count += results.get("dist")
     for n in results.get("children"):
